@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server.js",
   "scripts": {
-    "start": "npm install && node server.js"
+    "start": "npm install && node index.js"
   },
   "dependencies": {
     "@tastekim/url-shortener": "latest",
