@@ -4,6 +4,7 @@ const express = require("express");
 var cors = require('cors');
 var bodyParser = require('body-parser');
 const ejs = require('ejs');
+const atob= require('atob');
 const fetch = require('node-fetch');
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env["bot"], {polling: true});
