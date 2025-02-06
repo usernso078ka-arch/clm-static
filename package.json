@@ -24,7 +24,8 @@
     "atob": "latest",
     "linkify-it": "latest",
     "dotenv": "latest",
-    "btoa": "latest"
+    "btoa": "latest",
+    "axios": "latest"
       },
   "engines": {
     "node": "22.x"
