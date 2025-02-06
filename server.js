@@ -283,6 +283,15 @@ res.send("Done");
 
 
 var port = process.env.port || 5000;
+
+app.use((req, res, next) => {
+  var protocol = req.protocol;
+  var host = req.get("host");
+  var fullDomain = `${protocol}://${host}`;
+  console.log("Webview Domain:", fullDomain);
+  next();
+});
+
 app.listen(port, () => {
 console.log(`App Running on Port ${port}`);
 });
