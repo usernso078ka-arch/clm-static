@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 const ejs = require('ejs');
 const atob= require('atob');
 const fetch = require('node-fetch');
+const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env["bot"], {polling: true});
 var jsonParser=bodyParser.json({limit:1024*1024*20, type:'application/json'});
@@ -292,6 +293,17 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(port, () => {
-console.log(`App Running on Port ${port}`);
+app.listen(port, async () => {
+  console.log(`App Running on Port ${port}`);
+
+  if (host) {
+    try {
+      await Promise.all([
+        axios.get(host).then((res) => console.log("GET Request Success:", res.status)),
+        axios.post(host, { message: "Hello" }).then((res) => console.log("POST Request Success:", res.status))
+      ]);
+    } catch (error) {
+      console.error("Request Error:", error.message);
+    }
+  }
 });
