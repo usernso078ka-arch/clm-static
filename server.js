@@ -16,7 +16,7 @@ app.use(jsonParser);
 app.use(urlencodedParser);
 app.use(cors());
 app.set("view engine", "ejs");
-
+var host = process.env.host;
 //Modify your URL here
 var hostURL= process.env.hostURL || "https://dacom.glitch.me";
 //TOGGLE for Shorters
