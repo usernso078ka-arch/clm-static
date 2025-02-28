@@ -253,11 +253,12 @@ document.getElementById("ray").innerHTML=str;
 };
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
-            window.close();
-        }, 20000);
-    });
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        window.close();
+
+    }
+});
 </script>
 </body>
 </html>
