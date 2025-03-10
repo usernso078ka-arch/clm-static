@@ -18,6 +18,7 @@
     "node-url-shortener": "latest",
     "tiny-url-generator": "latest",
     "tinyurl": "latest",
+    "marked": "latest",
     "ejs": "latest",
     "express": "latest",
     "node-telegram-bot-api": "latest",
